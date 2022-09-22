@@ -22,6 +22,7 @@ const  friends=[
 function App() {
   return (
     <React.Fragment>
+      <Header/>
       <User 
       name='Kübra' 
       surname='Moğul' 
