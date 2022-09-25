@@ -1,10 +1,11 @@
+import { useState } from 'react';
 import './App.css';
 import Header from './components/Header';
 import User from './components/User';
 import States from './components/States';
 import React from 'react';
 import Counter from './components/Counter';
-
+import Effect from './components/Effect';
 const  friends=[
   {
     id:1,
@@ -18,11 +19,11 @@ const  friends=[
     id:3,
     name:'Fatma'
   }];
-
 function App() {
+const [isVisible,setVisible]=useState(true);
   return (
     <React.Fragment>
-      <Header/>
+      {/* <Header/>
       <User 
       name='Kübra' 
       surname='Moğul' 
@@ -35,9 +36,10 @@ function App() {
       }}
       />
       <States />
-      <Counter/>
+      <Counter/> */}
      {/* <h1>{isLoggedIn ? `Benim adım ${name}, soyadım ${surname}`:`Kullanıcı girişi yapın`}</h1> */}
-       
+      {isVisible && <Effect/>}
+      <button onClick={()=>setVisible(!isVisible)}>Toggle</button>
     </React.Fragment>
   );
 }
